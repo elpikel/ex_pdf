@@ -1,8 +1,9 @@
 defmodule ExPdfTest do
   use ExUnit.Case
-  doctest ExPdf
 
-  test "greets the world" do
-    assert ExPdf.hello() == :world
+  test "generates pdf" do
+    pdf = ExPdf.generate()
+
+    assert pdf != nil
   end
 end

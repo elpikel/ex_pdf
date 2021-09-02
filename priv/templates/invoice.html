@@ -1,0 +1,25 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div>
+            <span><%= customer.full_name %></span>
+            <span><%= customer.address %></span>
+        </div>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+            <%= for order_item <- order_items do %>
+            <tr>
+                <td><%= order_item.name %></td>
+                <td><%= order_item.quantity %></td>
+                <td><%= order_item.price %></td>
+            </tr>
+            <% end %>
+        </table>
+    </body>
+</html>
