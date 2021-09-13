@@ -4,7 +4,7 @@ defmodule ExPdf.PythonPort do
     - path: directory to include in python path (charlist)
   """
   def python_instance(path) when is_list(path) do
-    python = '/usr/bin/python3'
+    python = System.get_env("PYTHON_BIN", "/usr/bin/python3") |> String.to_charlist
 
     {:ok, pid} = :python.start(python: python, python_path: path)
 
