@@ -25,3 +25,5 @@ ex_pdf-*.tar
 
 # Temporary files for e.g. tests
 /tmp
+
+/venv/

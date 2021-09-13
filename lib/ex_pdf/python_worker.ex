@@ -23,8 +23,8 @@ defmodule ExPdf.PythonWorker do
   end
 
   def handle_call(%{html: html}, _from, %{python_pid: pid} = state) do
-    PythonPort.call_python(pid, :pdf, :generate, [html])
+    pdf = PythonPort.call_python(pid, :pdf, :generate, [html])
 
-    {:reply, :ok, state}
+    {:reply, pdf, state}
   end
 end
